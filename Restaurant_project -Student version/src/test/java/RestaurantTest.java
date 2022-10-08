@@ -19,7 +19,7 @@ class RestaurantTest {
 
 	Restaurant restaurant;
 	RestaurantService service = new RestaurantService();
-	
+	List<Item> list = new ArrayList<>();
 
 	private void basicInfoaddToMenu() {
 		restaurant.addToMenu("Sweet corn soup", 119);
@@ -73,6 +73,15 @@ class RestaurantTest {
 
 		basicInfoaddToMenu();
 		assertThrows(itemNotFoundException.class, () -> restaurant.removeFromMenu("French fries"));
+	}
+
+	@Test
+	public void calculating_the_total_amount_for_the_selected_items() {
+
+		basicInfoaddToMenu();
+		list = restaurant.getMenu();
+		int TotalAmount = restaurant.calculateTotalAmount(list);
+
 	}
 
 	
