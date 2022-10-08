@@ -81,9 +81,8 @@ class RestaurantTest {
 		basicInfoaddToMenu();
 		list = restaurant.getMenu();
 		int TotalAmount = restaurant.calculateTotalAmount(list);
+		assertEquals(388, TotalAmount);
 
 	}
-
-	
 
 }
